@@ -65,7 +65,7 @@ PairWiseJaccardSetsHeatmap<- function(ident1, ident2, best_match = FALSE,
         cell_fun = function(j, i, x, y, width, height, fill) {
                 grid::grid.rect(x = x, y = y, width = width *0.99, height = height *0.99,
                           gp = grid::gpar(col = "grey", fill = fill, lty = 1, lwd = 0.5))
-                grid.text(sprintf("%.1f", small_mat[i, j]), x, y, gp = gpar(fontsize = 10))
+                grid::grid.text(sprintf("%.1f", small_mat[i, j]), x, y, gp = gpar(fontsize = 10))
         }
         mat<- PairWiseJaccardSets(ident1, ident2)
         col_fun<- circlize::colorRamp2(c(0, 1), c(col_low, col_high))
